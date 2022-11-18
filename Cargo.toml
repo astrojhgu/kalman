@@ -1,0 +1,25 @@
+[package]
+name = "kalman"
+version = "0.1.0"
+authors = ["jhgu"]
+edition = "2021"
+description = "Kalman filter forked from https://github.com/strawlab/adskalman-rs"
+license = "MIT/Apache-2.0"
+readme = "README.md"
+keywords = ["kalman", "bayesian"]
+categories = ["algorithms", "no-std", "science", "science::robotics"]
+
+[dependencies]
+nalgebra = {version="0.31", features=["libm"]}
+num-traits = {version="0.2", default-features=false}
+log = { version = "0.4", optional=true }
+approx = {version="0.5", default-features=false}
+
+[dev-dependencies]
+csv = "1.1"
+serde = {version="1.0", features=["derive"]}
+
+[features]
+default = ["std"]
+std = ["log"]
+
